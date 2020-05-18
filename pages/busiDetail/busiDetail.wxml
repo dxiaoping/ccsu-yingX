@@ -1,0 +1,34 @@
+<!--pages/busiDetail/busiDetail.wxml-->
+<view>
+	<view class="h1">
+		<text >{{business.busiName}}</text>
+	</view>
+</view>
+<view>
+	<view class="h2">
+		业务描述:
+	</view>
+	<view>{{business.solution}}</view>
+</view>
+<view>
+	<view class="h2">
+		地址导航
+	</view>
+	<view class="display-flex">
+		<block wx:for="{{addressList}}" wx:key="key">
+			<view bindtap="gotoDestination" data-index="{{index}}" class="addr-block"
+			 style="width:{{item.len}}px;">{{item.addrName}}</view>
+		</block>
+	</view>
+</view>
+<view>
+	<view class="h2">
+		其他业务
+	</view>
+	<block wx:for="{{busiList}}" wx:key="key">
+		<view bindtap="redirectTo" id="{{item.busiId}}">
+			<view>{{item.busiName}}</view>
+		</view>
+
+	</block>
+</view>

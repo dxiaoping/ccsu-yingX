@@ -1,0 +1,9 @@
+<!-- <template name="voice"> -->
+<view>
+	<view> 语音识别内容：{{currentText}} </view>
+	<view class="yy-view" catchtouchstart="streamRecord" catchtouchend="endStreamRecord">
+		<image class="yy-button" style="position:fixed;bottom:5%" src="/images/mkf.png"></image>
+	</view>
+</view>
+<view> 翻译结果：{{translateText}} </view>
+<!-- </template> -->

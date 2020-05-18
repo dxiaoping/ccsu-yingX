@@ -1,0 +1,227 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.10.3",
+	"appid": "wx85ba6df0e1434c0a",
+	"projectname": "ccsu-yingX",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "登录页面",
+					"pathName": "pages/login/login",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "测试",
+					"pathName": "pages/test/test",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "地图",
+					"pathName": "pages/map/mapView/mapView",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加地图",
+					"pathName": "pages/map/addMap/addMap",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学院列表",
+					"pathName": "pages/collegeIntroduc/college/college",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学院详情",
+					"pathName": "pages/collegeIntroduc/collegeDetail/collegeDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "专业详情",
+					"pathName": "pages/collegeIntroduc/speciality/speciality",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "入学报到",
+					"pathName": "pages/rxbd/rxbd",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业务详情",
+					"pathName": "pages/busiDetail/busiDetail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的信息",
+					"pathName": "pages/myInfo/myInfo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "管理员界面",
+					"pathName": "pages/admin/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "语音调试",
+					"pathName": "pages/voice/voice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地址管理",
+					"pathName": "pages/admin/addrManage/addrManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业务管理",
+					"pathName": "pages/admin/busiManage/busiManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "业务操作",
+					"pathName": "pages/admin/busiOperation/busiOperation",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "专业管理",
+					"pathName": "pages/admin/specialityManage/specialityManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "教学计划",
+					"pathName": "pages/jxjh/jxjh",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "社团管理",
+					"pathName": "pages/admin/associationManage/associationManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "协会编辑",
+					"pathName": "pages/admin/associationEdit/associationEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "实验室管理",
+					"pathName": "pages/admin/laboratoryManage/laboratoryManage",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "实验室编辑",
+					"pathName": "pages/admin/laboratoryEdit/laboratoryEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "实验室列表",
+					"pathName": "pages/laboratoryList/laboratoryList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地标列表",
+					"pathName": "pages/addressList/addressList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "学生社团",
+					"pathName": "pages/associationList/associationList",
+					"scene": null
+				}
+			]
+		}
+	}
+}

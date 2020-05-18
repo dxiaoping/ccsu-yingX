@@ -1,0 +1,24 @@
+<view class="data-info">
+	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 85vh;">
+		<block wx:for="{{address}}" wx:key="key">
+			<!-- <navigator url="../collegeDetail/collegeDetail?item.id={{item.id}}"> -->
+			<view bindtap="navigatorTo" class="weui-cell" id="{{item.addrId}}">
+				<view class="weui-row">
+					<view class="weui-college-name">{{item.addrName}}</view>
+					<view class="weui-row">
+						<button class="curd-button" bindtap="createAddr"  data-index='{{index}}' data-id='{{item.addrId}}' style="width:40px;height:24px;margin-right:10px;">修改</button>
+						<button class="curd-button" bindtap="delete" data-index='{{index}}' data-id='{{item.addrId}}' style="background-color:red;width:40px;height:24px;margin-right:10px;">删除</button>
+					</view>
+				</view>
+				<view class="weui-row">
+					<view>经度：{{item.longitude}}</view>
+					<view>纬度：{{item.latitude}}</view>
+				</view>
+			</view>
+			<!-- </navigator> -->
+		</block>
+	</scroll-view>
+</view>
+<view>
+	<button type="primary" bindtap="createAddr">添加地址</button>
+</view>

@@ -1,0 +1,12 @@
+<!--pages/admin/specialityModify/specialityModify.wxml-->
+<form bindsubmit="save">
+	<view>专业名</view>
+	<view>{{speciality.spacialityName}}</view>
+	<view>二级学院</view>
+	<view>{{speciality.collegeId}}</view>
+	<view>专业描述</view>
+	<view><textarea name='description' value="{{speciality.description}}"></textarea></view>
+	<view>主修课程</view>
+	<view>{{speciality.majorClass}}</view>
+	<button form-type="submit">保存</button>
+</form>

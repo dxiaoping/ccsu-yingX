@@ -1,0 +1,61 @@
+<view>
+	<form bindsubmit="search">
+		<view class="search-view">
+			<view class=" search-input" style="width: 73%;">
+				<input class="search-input" style="width: 100%;" placeholder-class="placeholder-class" bindinput="bindinput" value="{{inputValue}}" placeholder="请输入搜索关键词" />
+			</view>
+			<view class="search-button" style="width: 27%;">
+				<button class="search-button" style="width: 100%;" formType="submit">搜索</button>
+			</view>
+		</view>
+	</form>
+</view>
+
+<scroll-view scroll-y="true" class="scrollview" hidden="{{hideScroll}}" style="{{arrayHeight>340?'height:340rpx':''}}">
+	<view wx:for="{{bindSource}}">
+		<view id="{{item}}" bindtap="itemtap" class="itemview">{{item}}</view>
+	</view>
+</scroll-view>
+<view hidden="{{!hideScroll}}">
+
+
+	<view class="menu">
+		<view class="menu-item" bindtap="menuClick" id="xxjj">
+			<image class="menu-icon" src="../../images/school.png"></image>
+			<view class="menu-name">学校简介</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="laboratory">
+			<image class="menu-icon" src="../../images/school.png"></image>
+			<view class="menu-name">实验室</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="dbjj">
+			<image class="menu-icon" src="../../images/school.png"></image>
+			<view class="menu-name">地标简介</view>
+		</view>
+	</view>
+	<view class="menu">
+		<view class="menu-item" bindtap="menuClick" id="association">
+			<image class="menu-icon" src="../../images/school.png"></image>
+			<view class="menu-name">学生社团</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="rxbd">
+			<image class="menu-icon" src="../../images/school.png"></image>
+			<view class="menu-name">入学报到</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="dtdh">
+			<image class="menu-icon" src="../../images/map.png"></image>
+			<view class="menu-name">地图导航</view>
+		</view>
+	</view>
+</view>
+
+<view class="yy-view" catchtouchstart="streamRecord" catchtouchend="endStreamRecord" hidden="{{!hideScroll}}">
+	<view style="position:fixed; bottom:3%;">
+		<view class="yy-view" style="margin-bottom: 10px;">
+			<view>{{voiceInput}} </view>
+		</view>
+		<view class="yy-view">
+			<image class="yy-button" src="/images/mkf.png"></image>
+		</view>
+	</view>
+</view>

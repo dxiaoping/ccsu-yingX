@@ -1,0 +1,23 @@
+.h1{
+  font-size: 20px;
+  color: aqua;
+  text-align: center;
+}
+.h2{
+  font-size: 18px;
+  text-align: left;
+  font-weight: 800;
+}
+.display-flex{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* width:690rpx */
+}
+.addr-block{
+  background-color: chartreuse;
+  width: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 18px;
+}

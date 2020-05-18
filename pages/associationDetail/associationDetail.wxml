@@ -1,0 +1,23 @@
+<view>
+	<view class="h1">
+		<text >{{association.name}}</text>
+	</view>
+</view>
+<view>
+	<view class="h2">
+		社团描述:
+	</view>
+	<view>{{association.description}}</view>
+</view>
+<view>
+	<view class="h2">
+		相关人物:
+	</view>
+	<view>{{association.relatedPerson}}</view>
+</view>
+<view>
+	<view class="h2">
+		联系信息:
+	</view>
+	<view>{{association.contactInfo}}</view>
+</view>

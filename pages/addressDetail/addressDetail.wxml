@@ -1,0 +1,11 @@
+<view>
+	<view class="h1">
+		<text >{{addr.addrName}}</text>
+	</view>
+</view>
+<view>
+	<view class="h2">
+		地标描述:
+	</view>
+	<view>{{addr.description}}</view>
+</view>

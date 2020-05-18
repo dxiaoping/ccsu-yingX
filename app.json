@@ -1,0 +1,75 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/test/test",
+    "pages/map/mapView/mapView",
+    "pages/map/addMap/addMap",
+    "pages/myInfo/myInfo",
+    "pages/collegeIntroduc/college/college",
+    "pages/collegeIntroduc/collegeDetail/collegeDetail",
+    "pages/collegeIntroduc/speciality/speciality",
+    "pages/rxbd/rxbd",
+    "pages/busiDetail/busiDetail",
+    "pages/admin/index/index",
+    "pages/voice/voice",
+    "pages/admin/addrManage/addrManage",
+    "pages/admin/busiManage/busiManage",
+    "pages/admin/busiEdit/busiEdit",
+    "pages/admin/specialityManage/specialityManage",
+    "pages/admin/specialityEdit/specialityEdit",
+    "pages/jxjh/jxjh",
+    "pages/admin/associationManage/associationManage",
+    "pages/admin/associationEdit/associationEdit",
+    "pages/admin/laboratoryManage/laboratoryManage",
+    "pages/admin/laboratoryEdit/laboratoryEdit",
+    "pages/addressList/addressList",
+    "pages/laboratoryList/laboratoryList",
+    "pages/associationList/associationList",
+    "pages/laboratoryDetail/laboratoryDetail",
+    "pages/associationDetail/associationDetail",
+    "pages/addressDetail/addressDetail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/myInfo/myInfo",
+        "text": "我的",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_selected.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index.png"
+      },
+      {
+        "pagePath": "pages/admin/index/index",
+        "text": "管理员",
+        "iconPath": "images/me.png",
+        "selectedIconPath": "images/me_selected.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.3",
+      "provider": "wx069ba97219f66d99"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

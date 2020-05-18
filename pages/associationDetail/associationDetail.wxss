@@ -1,0 +1,10 @@
+.h1{
+  font-size: 20px;
+  color: aqua;
+  text-align: center;
+}
+.h2{
+  font-size: 18px;
+  text-align: left;
+  font-weight: 800;
+}

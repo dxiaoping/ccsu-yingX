@@ -1,0 +1,44 @@
+<form bindsubmit="save">
+	<view class="weui-row-left">
+		<view>
+			社团名称:
+		</view>
+		<view>
+			<input type="text" class="szyx-input" name="name" value="{{association.name}}"></input>
+		</view>
+	</view>
+	<view class="section">
+			<picker bindchange="modifyClass" value="{{index}}" range-key="className" range="{{classList}}">
+				<view class="picker">
+					所属机构：{{classList[classIndex].className}}
+				</view>
+			</picker>
+		</view>
+	<view>
+		<view>
+			社团简介
+		</view>
+		<view>
+			<textarea class="szyx-input" name="description" value="{{business.description}}"></textarea>
+		</view>
+	</view>
+
+	<view>
+		<view>
+			相关人物
+		</view>
+		<view>
+			<textarea class="szyx-input" name="relatedPerson" value="{{association.relatedPerson}}"></textarea>
+		</view>
+	</view>
+
+	<view>
+		<view>
+			联系信息
+		</view>
+		<view>
+			<textarea class="szyx-input" name="contactInfo" value="{{association.contactInfo}}"></textarea>
+		</view>
+	</view>
+	<button form-type="submit">保存</button>
+</form>

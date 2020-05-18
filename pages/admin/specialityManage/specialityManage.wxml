@@ -1,0 +1,13 @@
+<view class="data-info">
+	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 85vh;">
+		<block wx:for="{{speciality}}" wx:key="key">
+			<navigator url="../specialityEdit/specialityEdit?specialityId={{item.specialityId}}">
+			<view bindtap="navigatorTo" class="weui-cell" id="{{item.specialityId}}">
+				<view class="weui-row">
+					<view class="weui-college-name">{{item.specialityName}}</view>
+				</view>
+			</view>
+			</navigator>
+		</block>
+	</scroll-view>
+</view>

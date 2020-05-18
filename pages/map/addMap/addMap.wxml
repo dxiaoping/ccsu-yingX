@@ -1,0 +1,29 @@
+<!--mask-->
+<view class="drawer_screen" bindtap="addAddress" data-statu="close" wx:if="{{showModalStatus}}"></view>
+<!--content-->
+<!--使用animation属性指定需要执行的动画-->
+<view animation="{{animationData}}" class="drawer_box" wx:if="{{showModalStatus}}">
+	<!--drawer content-->
+	<view class="drawer_title">添加地标</view>
+	<form bindsubmit="submitform">
+		<view class="top grid">
+			<label class="title col-0">地标名</label>
+			<input class="input_base input_h30 col-1" name="name" value="{{addrName}}"></input>
+		</view>
+		<view class="top bottom grid">
+			<label class="title col-0">地标描述</label>
+			<textarea class="input_base input_h90 col-1" name="description" value="{{description}}"></textarea>
+		</view>
+		<button form-type="submit">提交</button>
+	</form>
+</view>
+<view>
+	<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: 90vh;">
+		
+			<view style="position:fixed; bottom:10%;left:80%;width: 100%;">
+			<view><image class="icon" src="/images/dingwei1.png"  bindtap="updateLocation"></image></view>
+				<view><image class="icon" src="/images/add.png"  bindtap="addAddress" data-statu="open" data-type="add"></image></view>
+			</view>
+	</map>
+		<button style="width:100%" type="primary" bindtap="addAddress" data-statu="open">修改</button>
+</view>

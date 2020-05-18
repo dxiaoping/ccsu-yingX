@@ -1,0 +1,12 @@
+<!--pages/collegeIntroduc/speciality/speciality.wxml-->
+<view>
+  <text>{{speciality.specialityName}}</text>
+</view>
+<view>
+  <view>专业描述</view>
+  <view>{{speciality.description}}</view>
+</view>
+<view>
+  <view>主修课程</view>
+  <view>{{speciality.majorClass}}</view>
+</view>

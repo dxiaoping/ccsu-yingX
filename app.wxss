@@ -1,0 +1,27 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.position-w40-h150{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 40%;
+  height: 150%;
+  position:  absolute;
+}
+
+.position-w160-h150{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 160%;
+  height: 150%;
+  position:  absolute;
+}

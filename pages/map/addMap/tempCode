@@ -1,0 +1,47 @@
+<view class="container" class="zn-uploadimg">
+	<button type="primary" bindtap="modalinput"> 添加地标 </button> </view>
+<modal id="addressInfo" hidden="{{hiddenmodalput}}" title="添加地标"
+ confirm - text="提交" cancel - text="取消" 
+ bindcancel="cancel" bindconfirm="confirm">
+	<view class="addrInfo">
+		<text>地标名称</text>
+		<input bindinput="inputName" type='text' placeholder="地标名称：" auto - focus />
+	</view>
+	<textarea bindinput="inputDescription" type='text' placeholder="地标描述：" auto - focus> </textarea>
+</modal>
+
+/**js*/
+//点击按钮痰喘指定的hiddenmodalput弹出框 
+modalinput: function() {
+    this.setData({
+        hiddenmodalput: !this.data.hiddenmodalput
+    })
+},
+//取消按钮 
+cancel: function() {
+    this.setData({
+        hiddenmodalput: true,
+        newDescription:'',
+        newName:''
+    });
+    console.log(this.data)
+},
+//确认 
+confirm: function(e) {
+    this.setData({
+        hiddenmodalput: true,
+        addrName:this.data.newName,
+        addrDescription:this.data.newDescription
+    }),
+    console.log(this.data)
+},
+inputName:function(e){
+  this.setData({
+    newName:e.detail.value
+  })
+},
+inputDescription:function(e){
+  this.setData({
+    newDescription:e.detail.value
+  })
+},

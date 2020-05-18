@@ -1,0 +1,24 @@
+<view class="menu">
+		<view class="menu-item" bindtap="menuClick" id="addr">
+			<image class="menu-icon" src="/images/school.png"></image>
+			<view class="menu-name">地标管理</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="busi">
+			<image class="menu-icon" src="/images/school.png"></image>
+			<view class="menu-name">业务管理</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="speciality">
+			<image class="menu-icon" src="/images/school.png"></image>
+			<view class="menu-name">专业管理</view>
+		</view>
+	</view>
+	<view  class="menu">
+		<view class="menu-item" bindtap="menuClick" id="association">
+			<image class="menu-icon" src="/images/school.png"></image>
+			<view class="menu-name">社团管理</view>
+		</view>
+		<view class="menu-item" bindtap="menuClick" id="laboratory">
+			<image class="menu-icon" src="/images/school.png"></image>
+			<view class="menu-name">实验室</view>
+		</view>
+	</view>

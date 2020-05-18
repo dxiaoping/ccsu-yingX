@@ -1,0 +1,25 @@
+<view>
+	<!-- <block wx:for="{{schoolDetail}}" wx:key="key">
+		<text decode="{{true}}">&emsp;&emsp;{{item.detail}}\n\n</text>
+	</block> -->
+</view>
+
+<view class="data-info">
+<view>二级学院：</view>
+	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 100vh;">
+		<block wx:for="{{college}}" wx:key="key">
+			<!-- <navigator url="../collegeDetail/collegeDetail?item.id={{item.id}}"> -->
+			<view bindtap="navigatorTo" class="weui-cell" id="{{item.collegeId}}">
+				<view class="weui-row">
+					<view class="weui-college-name">{{item.collegeName}}</view>
+				</view>
+				<view>
+					<!-- <view class="weui-college-description"></view> -->
+					<view wx:if="{{item.simpleDesc==''}}" class=" weui-college-description"><text style="font-size: 18px; color: rgb(85, 190, 238);"> 简介:</text>【暂无简介】 </view>
+					<view wx:else class=" weui-college-description"><text style="font-size: 18px; color: rgb(85, 190, 238);"> 简介:</text>{{item.simpleDesc}} </view>
+				</view>
+			</view>
+			<!-- </navigator> -->
+		</block>
+	</scroll-view>
+</view>

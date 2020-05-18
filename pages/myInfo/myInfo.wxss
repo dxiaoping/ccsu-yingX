@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 100%;
+  position:  absolute;
+}
+.userInfo{
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+  height: 100%;
+  /* position:  absolute; */
+}
+.head{
+  width: 100%;
+  height: 455rpx;
+  box-sizing: border-box;
+}

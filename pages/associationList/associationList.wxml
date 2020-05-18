@@ -1,0 +1,13 @@
+<view class="data-info">
+	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 100vh;">
+		<block wx:for="{{association}}" wx:key="key">
+			<!-- <navigator url="../collegeDetail/collegeDetail?item.id={{item.id}}"> -->
+			<view bindtap="navigatorTo" class="weui-cell" id="{{item.id}}">
+				<view class="weui-row">
+					<view class="weui-name">{{item.name}}</view>
+				</view>
+			</view>
+			<!-- </navigator> -->
+		</block>
+	</scroll-view>
+</view>

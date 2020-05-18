@@ -1,0 +1,59 @@
+<form bindsubmit="save">
+	<view class="weui-row-left">
+		<view>
+			业务名称:
+		</view>
+		<view>
+			<input type="text" class="busi-input" name="name" value="{{business.busiName}}"></input>
+		</view>
+	</view>
+	<view class="weui-row-left">
+		<!-- <view>
+			业务类别:
+		</view> -->
+		<view class="section">
+			<picker bindchange="modifyClass" value="{{index}}" range-key="busiClassName" range="{{classList}}">
+				<view class="picker">
+					当前业务类型：{{classList[classIndex].busiClassName}}
+				</view>
+			</picker>
+		</view>
+	</view>
+	<view>
+		<view>
+			业务解决方案
+		</view>
+		<view>
+			<textarea class="busi-input" name="solution" value="{{business.solution}}"></textarea>
+		</view>
+	</view>
+
+	<view>相关地址：</view>
+	<view class="weui-row-left">
+		<view class="display-flex">
+			<block wx:for='{{addrRefBean}}' wx:key='key'>
+				<view data-index="{{index}}" bindtap="deleteAddrRef" class="addr-block" style="width:{{item.len}}px;">{{item.addrName}}</view>
+			</block>
+			<view>
+				<button class="curd-button" bindtap="createAddrRef" style="width:120px;height:24px;margin-left: 8px;">添加关联地址</button>
+			</view>
+		</view>
+	</view>
+	<pickerinput list="{{addressList}}" _width="600rpx" _height="80rpx" bind:action="createAddrRef" actualvalue="addrId" showvalue="addrName"></pickerinput>
+
+	<view>
+		相关业务：
+	</view>
+	<view class="weui-row-left">
+		<view class="display-flex">
+			<block wx:for='{{busiRefBean}}' wx:key='key'>
+				<view data-index="{{index}}" bindtap="deleteBusiRef" class="addr-block" style="width:{{item.len}}px;">{{item.busiName}}</view>
+			</block>
+			<view>
+				<button class="curd-button" bindtap="createBusiRef" style="width:120px;height:24px;margin-left: 8px;">添加关联业务</button>
+			</view>
+		</view>
+	</view>
+	<pickerinput list="{{businessList}}" _width="600rpx" _height="60rpx" bind:action="createBusiRef" actualvalue="busiId" showvalue="busiName"></pickerinput>
+	<button form-type="submit">保存</button>
+</form>

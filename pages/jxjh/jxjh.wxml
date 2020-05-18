@@ -1,0 +1,40 @@
+<!--  参考案例：https://github.com/Small-Years/MiNi_Table_Demo -->
+
+<scroll-view scroll-x="true" class='scrollClass' scroll-y="true" style="height: 100vh;" >
+	<view class='table'>
+		<view class='table_header'>
+			<block wx:for="{{title}}">
+				<view class='th' wx:if="{{item=='开课单位' || item=='开课方向' || item=='课程名称' || item=='课程性质' || item=='课程类别' }}" style="width:360rpx">
+					<view class="cell_label centerclass">{{item}}</view>
+				</view>
+        <view class='th' wx:else>
+					<view class="cell_label centerclass">{{item}}</view>
+				</view>
+			</block>
+		</view>
+		<block wx:for="{{jxjh}}">
+			<view class='table_main'>
+				<!-- <block wx:for="{{title}}"> -->
+					<view class='td'><view class="cell_label centerclass">{{item.startYear}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.specialityName}}</view></view>
+          <view class='td' style="width:360rpx"><view class="cell_label centerclass">{{item.specialityDirection}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.startTerm}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.courseNo}}</view></view>
+          <view class='td' style="width:360rpx"><view class="cell_label centerclass">{{item.courseName}}</view></view>
+          <view class='td' style="width:360rpx"><view class="cell_label centerclass">{{item.courseNature}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.courseAttr}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.checkMode}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.credit}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.timeClass}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.time_week}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.timeClassTheory}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.timeClassPractice}}</view></view>
+          <view class='td'><view class="cell_label centerclass">{{item.timeClassLecture}}</view></view>
+          <view class='td' style="width:360rpx"><view class="cell_label centerclass">{{item.unit}}</view></view>
+          <view class='td' style="width:360rpx"><view class="cell_label centerclass">{{item.courseClass}}</view></view>
+
+				<!-- </block> -->
+			</view>
+		</block>
+	</view>
+</scroll-view>

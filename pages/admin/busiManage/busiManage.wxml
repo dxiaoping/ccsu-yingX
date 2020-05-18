@@ -1,0 +1,20 @@
+<view class="data-info">
+	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 85vh;">
+		<block wx:for="{{business}}" wx:key="key">
+			<!-- <navigator url="../collegeDetail/collegeDetail?item.id={{item.id}}"> -->
+			<view bindtap="navigatorTo" class="weui-cell" id="{{item.busiId}}">
+				<view class="weui-row">
+					<view class="weui-college-name">{{item.busiName}}</view>
+					<view class="weui-row">
+						<button class="curd-button" bindtap="createBusi" data-index="{{item.busiId}}" data-type="modify" style="width:40px;height:24px;margin-right:10px;">修改</button>
+						<button class="curd-button" bindtap="delete" style="background-color:red;width:40px;height:24px;margin-right:10px;">删除</button>
+					</view>
+				</view>
+			</view>
+			<!-- </navigator> -->
+		</block>
+	</scroll-view>
+</view>
+<view>
+	<button type="primary" bindtap="createBusi" id='create' data-type="create">添加业务</button>
+</view>
