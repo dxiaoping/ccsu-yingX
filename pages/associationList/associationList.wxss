@@ -31,3 +31,71 @@
   font-size: 14px;
   padding: 5px 5px 5px 5px;
 }
+/* 下拉列表 */
+.navigator{
+  /* position: fixed; */
+  top: 18rpx;
+  left: 0;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.navigator>.navigator-name{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #666;
+  line-height: 100rpx;
+}
+
+.navigator>.navigator-name>.iconfont{
+  font-size: 12rpx;
+  margin-left: 8rpx;
+}
+
+.drop-down-background{
+  position: fixed;
+  /* top: 118rpx; */
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.drop-down-flex{
+  position: fixed;
+  /* top: 118rpx; */
+  left: 0;
+  width: 100%;
+  z-index: 222;
+  max-height: 100%;
+  overflow: hidden;
+  opacity: 0.95;
+}
+
+.drop-down{
+  width: 100%;
+  padding: 0 24rpx;
+  background: rgb(145, 165, 164);
+  height: 0rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  color: rgb(255, 254, 254);
+  transition: all 300ms;
+  overflow: hidden;
+}
+ 
+.down-active{
+  color: #F46458;
+}
+.down-show{
+  height: 88rpx;
+}

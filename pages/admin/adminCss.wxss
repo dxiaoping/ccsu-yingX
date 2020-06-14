@@ -3,7 +3,10 @@
   /* position: relative;
   top: 49px; */
 }
-
+.background{
+  background:url("https://i.niupic.com/images/2020/05/21/7U3G.png");
+  background-size: cover;
+}
 .weui-cell {
   padding: 10px 0px 10px 10px;
   /* 上 右 下 左*/
@@ -38,9 +41,9 @@
   height: 20;
 }
 .addr-block{
-  background-color: chartreuse;
+  background-color: #E0E0E0;
   width: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
   font-size: 18px;
 }
@@ -52,4 +55,14 @@
 }
 .szyx-input{
   background-color: silver;
+  border-radius: 10px;
+  width: 95%;
+  overflow-y: scroll;
+  /* left: 3%; */
+}
+.text-font18{
+  font-size: 18px;
+}
+.left-margin{
+  margin-left: 3%;
 }

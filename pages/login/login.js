@@ -55,23 +55,35 @@ Page({
       // util.hideLoading()
       return
     }
+    wx.showLoading({
+      title: '登录中......',
+      // icon: 'none',
+      // duration: 60000
+    })
     request.send('/user/login', param, 'POST', function (res) {
       // console.log(res);
       if (res.data.code == 10012) {
-        console.log("登录成功");
+        console.log("登录成功", res.data);
         cache.set('user', res.data.data);
         wx.showToast({
-          title: '绑定成功',
+          title: '登录成功',
           icon: 'success',
           duration: 1500
         })
         // 延迟1.5秒返回首页
         setTimeout(function () {
           wx.switchTab({
-            url: '/pages/index/index',
+            url: '/pages/myInfo/myInfo',
           })
         }, 1500)
+      }else{
+        wx.showToast({
+          title: '登录失败',
+          icon: 'error',
+          duration: 1000
+        })
       }
+      wx.hideLoading();
     })
   },
   help: function () {

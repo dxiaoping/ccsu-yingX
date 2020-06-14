@@ -18,7 +18,13 @@ const formatNumber = n => {
 function print(message){
   console.log(">>>>>>>>>>>>>>>>>>>>>>>>--"+message+"-->>>>>>>>>>>>>>>>>>")
 }
+ function  processStr(str, n) {
+  var l = str.length;
+  if (l <= n) return str;
+  return str.slice(0, n - 1) + "...";
+}
 module.exports = {
   formatTime: formatTime,
-  print:print
+  print:print,
+  processStr:processStr
 }

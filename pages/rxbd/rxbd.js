@@ -6,27 +6,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-    busi:[]
+    busi: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var url='/busi/queryBusiByClass';
-    var parma={
-      classId:1
+    var url = '/busi/queryBusiByClass';
+    if (options.id == 2) {
+      wx.setNavigationBarTitle({
+        title: '校园生活'
+      })
+    }
+    var parma = {
+      classId: options.id
+      // classId: 1
     };
     var that = this;
-    request.send(url,parma,'GET',function(res){
+    request.send(url, parma, 'GET', function (res) {
       that.setData({
-          busi:res.data.data
-      }),
-      console.log('获取到业务数据');
+          busi: res.data.data
+        }),
+        console.log('获取到业务数据');
       console.log(res);
     })
   },
- navigatorTo: function (e) {
+  navigatorTo: function (e) {
     console.log("进入页面跳转函数");
     console.log(e.currentTarget.id);
     wx.navigateTo({

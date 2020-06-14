@@ -1,3 +1,31 @@
+<view>
+	<view class='navigator'>
+		<!-- 导航标题 -->
+		<view class='navigator-name' bindtap='navigatorShow' id="timeOrder">
+			<text>{{organization}}</text>
+		</view>
+		<view class='navigator-name' bindtap='navigatorShow' id="timeRange">
+			<text>{{timeRange}}</text>
+		</view>
+	</view>
+	<!-- 下拉列表 -->
+	<!-- <view class='drop-down-background' hidden='{{!isDisplayOrderChoice}}' bindtouchstart='handletouchtart'></view> -->
+	<view class='drop-down-flex'>
+		<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style='{{isDisplayOrderChoice?"height: 50vh;":"height: 0vh;"}}'>
+			<view wx:for="{{organizationDown.organizationDown}}" wx:key="this" class='drop-down {{navigatorDown.organization==index?"down-active":""}} {{isDisplayOrderChoice?"down-show":""}}' data-item='{{item}}' data-index='{{index}}' bindtap='navigatorChoice'>
+				<text>{{item.value}}</text>
+			</view>
+		</scroll-view>
+	</view>
+
+	<view class='drop-down-flex'>
+		<view wx:for="{{timeRangeDown.timeRangeDown}}" wx:key="this" class='drop-down {{timeRange.navigator==index?"down-active":""}} {{isDisplayRangeChoice?"down-show":""}}' data-item='{{item}}' data-index='{{index}}' bindtap='navigatorChoice'>
+			<text>{{item}}</text>
+			<!-- <text class='iconfont iconbianzu5' wx:if='{{navigatorDown.navigator==index?true:false}}'></text> -->
+		</view>
+	</view>
+</view>
+
 <view class="data-info">
 	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 100vh;">
 		<block wx:for="{{association}}" wx:key="key">

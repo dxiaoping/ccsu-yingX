@@ -36,6 +36,11 @@ Page({
     }
     request.send('/busi/save', param, 'POST', function (res) {
       console.log('保存业务信息', res);
+      setTimeout(function () {
+        wx.redirectTo({
+          url: '../busiManage/busiManage',
+        })
+      }, 1000)
     })
   },
   /**

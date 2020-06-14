@@ -1,10 +1,12 @@
+<view class = "background" style="width:100%;height:100%" >
+<view class="left-margin">
 <form bindsubmit="save">
 	<view class="weui-row-left">
 		<view>
-			业务名称:
+				<text class="text-font18">业务名称:</text>
 		</view>
 		<view>
-			<input type="text" class="busi-input" name="name" value="{{business.busiName}}"></input>
+				<input type="text" class="szyx-input" name="name" value="{{business.busiName}}"></input>
 		</view>
 	</view>
 	<view class="weui-row-left">
@@ -14,21 +16,21 @@
 		<view class="section">
 			<picker bindchange="modifyClass" value="{{index}}" range-key="busiClassName" range="{{classList}}">
 				<view class="picker">
-					当前业务类型：{{classList[classIndex].busiClassName}}
+						<text class="text-font18">当前业务类型：{{classList[classIndex].busiClassName}}</text>
 				</view>
 			</picker>
 		</view>
 	</view>
 	<view>
 		<view>
-			业务解决方案
+				<text class="text-font18">业务解决方案</text>
 		</view>
 		<view>
-			<textarea class="busi-input" name="solution" value="{{business.solution}}"></textarea>
+			<textarea maxlength="-1"  class="szyx-input" name="solution" value="{{business.solution}}"></textarea>
 		</view>
 	</view>
 
-	<view>相关地址：</view>
+	<view>	<text class="text-font18">相关地址：</text></view>
 	<view class="weui-row-left">
 		<view class="display-flex">
 			<block wx:for='{{addrRefBean}}' wx:key='key'>
@@ -42,7 +44,7 @@
 	<pickerinput list="{{addressList}}" _width="600rpx" _height="80rpx" bind:action="createAddrRef" actualvalue="addrId" showvalue="addrName"></pickerinput>
 
 	<view>
-		相关业务：
+		<text class="text-font18">	相关业务：</text>
 	</view>
 	<view class="weui-row-left">
 		<view class="display-flex">
@@ -57,3 +59,5 @@
 	<pickerinput list="{{businessList}}" _width="600rpx" _height="60rpx" bind:action="createBusiRef" actualvalue="busiId" showvalue="busiName"></pickerinput>
 	<button form-type="submit">保存</button>
 </form>
+</view>
+</view>

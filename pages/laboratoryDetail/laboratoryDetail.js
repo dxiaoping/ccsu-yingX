@@ -24,6 +24,12 @@ Page({
       that.setData({
         laboratory:res.data.data
       })
+      that.setData({
+        'laboratory.relatedPerson': that.data.laboratory.relatedPerson.split('&hc').join('\n'),
+        'laboratory.contactInfo': that.data.laboratory.contactInfo.split('&hc').join('\n'),
+        'laboratory.description':that.data.laboratory.description.split('&hc').join('\n'),
+        'laboratory.address': that.data.laboratory.address.split('&hc').join('\n'),
+      })
     })
   },
 

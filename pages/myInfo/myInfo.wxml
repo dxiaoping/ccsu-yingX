@@ -4,17 +4,20 @@
 </view>
 
 <view hidden="{{notShowUser}}">
-	<view>
-		<view> <text>姓名：{{userInfo.studentName}}</text></view>
-		<view><text>学号：{{userInfo.studentNo}}</text></view>
-		<view><text>学院：{{userInfo.college}}</text></view>
-		<view><text>专业：{{userInfo.speciality}}</text></view>
-		<view><text>班级：{{userInfo.class1}}</text></view>
-		<view><text>宿舍：{{userInfo.dormitory}}</text></view>
+	<view >
+		<view class="stu-info-left" style="background-color: red;"> <text class="text-style">姓名：{{userInfo.studentName}}</text></view>
+		<view class="stu-info-right" style="background-color: orange;"> <text class="text-style">学号：{{userInfo.studentNo}}</text></view>
+		<view class="stu-info-left" style="background-color: violet;"><text class="text-style">学院：{{userInfo.college}}</text></view>
+		<view class="stu-info-right" style="background-color: green;"><text class="text-style">专业：{{userInfo.speciality}}</text></view>
+		<view class="stu-info-left" style="background-color: Cyan;"><text class="text-style">班级：{{userInfo.class1}}</text></view>
+		<view class="stu-info-right" style="background-color: blue;"><text class="text-style">宿舍：{{userInfo.dormitory}}</text></view>
 	</view>
 </view>
 <view>
-	<button type="primary" bindtap="navigate" hidden='{{notShowLogin}}'>登录</button>
-	<button type="primary" bindtap="exitLogin" hidden='{{!notShowLogin}}'>退出</button>
-	<button type="primary" bindtap="jxjh">教学计划</button>
+<view class="item" style="position:fixed; bottom:15%;"  hidden='{{notShowLogin}}'>
+			<image class="icon"  bindtap="navigate" src="/images/denglu.png"></image>
+		</view>
+	<!-- <button type="primary" style="position:fixed; bottom:20%;left:20%;" bindtap="navigate" hidden='{{notShowLogin}}'>登录</button> -->
+	<button style="position:fixed; bottom:3%; right:0%;background-color:#808080;width:45%;" bindtap="exitLogin" hidden='{{!notShowLogin}}'>退出</button>
+	<button style="position:fixed; bottom:3%; left:0%; background-color:#00DB00;width:45%;" bindtap="jxjh" hidden='{{!notShowLogin}}'>教学计划</button>
 </view>

@@ -1,1 +1,1 @@
-/* pages/admin/specialityModify/specialityModify.wxss */
+@import '../adminCss.wxss';

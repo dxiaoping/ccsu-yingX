@@ -19,3 +19,43 @@
   height: 455rpx;
   box-sizing: border-box;
 }
+.stu-info-right{
+  padding: 4px 10px 4px 10px;
+  /* 上 右 下 左*/
+  float: right;
+  width: 70%;
+  /* background-color: #00FFFF; */
+  border-radius: 10px;
+  margin: 2px 25px 1px 0px;
+}
+.stu-info-left{
+  padding: 4px 0px 4px 10px;
+  /* 上 右 下 左*/
+  float: left;
+  width: 70%;
+  border-radius: 10px;
+  margin: 2px 0px 1px 25px;
+}
+.text-style{
+  font-size: 17px;
+  color: white;
+}
+.button-style{
+  display: flex;
+  background-color: red;
+}
+.item {
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  width: 100%;
+
+  /* background-color: #fff; */
+  /* width: 25%; */
+}
+
+.icon {
+  width: 240rpx;
+  height: 240rpx;
+}

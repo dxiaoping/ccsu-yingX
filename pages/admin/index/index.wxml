@@ -1,24 +1,50 @@
-<view class="menu">
+<view>
+	<image class="head" src="/images/myinfo_logo.png"></image>
+</view>
+<!-- <view class="container" class="zn-uploadimg"> <button type="primary" bindtap="modalinput"> modal有输入框 </button>
+</view> -->
+<modal id="modal" hidden="{{hiddenmodalput}}" title="管理员验证" confirm-text="" cancel-text="" bindcancel="cancel" bindconfirm="confirm">
+	<form bindsubmit="confirm">
+		<view class="weui-row-left">
+			<view style="width:100px">
+				<text>管理员秘钥:</text>
+			</view>
+			<view>
+				<input id="secret " name="secret" placeholder="请输入管理员秘钥" value="{{secretKey_input}}" auto - focus />
+			</view>
+		</view>
+		<view class="weui-row-left">
+		<button bindtap="cancel">取消</button>
+		<button form-type="submit">登录</button>
+		</view>
+	</form>
+</modal>
+
+<view style="background-image: url('https://i.niupic.com/images/2020/05/21/7U3C.png'); background-size: 100% 100%;">
+	<view class="menu">
 		<view class="menu-item" bindtap="menuClick" id="addr">
-			<image class="menu-icon" src="/images/school.png"></image>
+			<image class="menu-icon" src="/images/map_admin.png"></image>
 			<view class="menu-name">地标管理</view>
 		</view>
 		<view class="menu-item" bindtap="menuClick" id="busi">
-			<image class="menu-icon" src="/images/school.png"></image>
+			<image class="menu-icon" src="/images/school_admin.png"></image>
 			<view class="menu-name">业务管理</view>
 		</view>
 		<view class="menu-item" bindtap="menuClick" id="speciality">
-			<image class="menu-icon" src="/images/school.png"></image>
+			<image class="menu-icon" src="/images/speciality_admin.png"></image>
 			<view class="menu-name">专业管理</view>
 		</view>
 	</view>
-	<view  class="menu">
+	<view class="menu">
 		<view class="menu-item" bindtap="menuClick" id="association">
-			<image class="menu-icon" src="/images/school.png"></image>
+			<image class="menu-icon" src="/images/association_admin.png"></image>
 			<view class="menu-name">社团管理</view>
 		</view>
 		<view class="menu-item" bindtap="menuClick" id="laboratory">
-			<image class="menu-icon" src="/images/school.png"></image>
+			<image class="menu-icon" src="/images/laboratory_admin.png"></image>
 			<view class="menu-name">实验室</view>
 		</view>
 	</view>
+	
+</view>
+	<button style=" background-color:#00DB00;width:100%;position:fixed; bottom:0%;" bindtap="quitAdmin" >退出管理员</button>

@@ -15,7 +15,7 @@
                 <text class="text-password">密码</text>
                 <input id="password" name="password" password bindfocus="onfocus" placeholder="{{passwordHit}}" />
             </view>
-            <text class="forget" bindtap='help'>帮助？</text>
+            <!-- <text class="forget" bindtap='help'>帮助？</text> -->
             <button form-type="submit" type="primary" class="login">绑定</button>
         </view>
     </form>

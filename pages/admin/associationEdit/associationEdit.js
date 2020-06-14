@@ -6,24 +6,10 @@ Page({
    */
   data: {
     association: {
-      // id: '',
-      // name: '院学生会-组织部',
-      // relatedPerson: '段晓平、王小莉',
-      // contactInfo: '手机号：15574902291；QQ:1693547683;邮箱:15574902291@163.com',
-      // description: '',
-      // operationType: ''
     },
     optionType:'modify',
     classIndex: 0,
     classList: [
-      {
-        classId:0,
-        className:'计数院'
-      },
-      {
-        classId:1,
-        className:'校学生会'
-      }
     ],
   },
 
@@ -32,10 +18,22 @@ Page({
    */
   onLoad: function (options) {
     console.log('社团编辑初始化', options);
+    
     var that = this;
+    request.send('/base/queryConfig',{class1:'asso_organization'},'GET',function(res){
+      that.setData({
+          classList:res.data.data,
+         
+      })
+      that.setData({
+        'association.organization': that.data.classList[0].value
+      })
+      console.log('社团所属组织',res);
+    })
+
     if (options.associationId != "undefined") {
       var params = {
-        associationId: options.associationId,
+        id: options.associationId,
       }
       request.send('/association/queryOne', params, 'GET', function (res) {
         that.setData({
@@ -55,6 +53,7 @@ Page({
       association:{
         id: this.data.association.id,
         name: e.detail.value.name,
+        organization:this.data.association.organization,
         relatedPerson: e.detail.value.relatedPerson,
         contactInfo: e.detail.value.contactInfo,
         description: e.detail.value.description,
@@ -70,10 +69,8 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     var classIndex = e.detail.value;
     this.setData({
-      classIndex: classIndex
-    })
-    this.setData({
-      'business.busiClassId': this.data.classList[classIndex].classId
+      classIndex:classIndex,
+      'association.organization': this.data.classList[classIndex].value
     })
   },
 })

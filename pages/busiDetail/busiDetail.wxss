@@ -15,9 +15,16 @@
   /* width:690rpx */
 }
 .addr-block{
-  background-color: chartreuse;
+  background-color: #E0E0E0;
   width: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+}
+.busi-block{
+  background-color: #E0E0E0;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  text-align: left;
+  font-size: 20px;
 }

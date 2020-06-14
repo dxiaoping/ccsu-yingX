@@ -27,9 +27,30 @@ Page({
       url: '../busiEdit/busiEdit?operationType='+data.type+'&busiId='+data.index,
     })
   },
-  delete:function(e){
-    console.log('删除业务',e);
-    // request.send('/busi/delete',{busiId:e.detail})
+  delete: function (e) {
+    console.log('删除地址',e);
+    var index=e.currentTarget.dataset.index;
+    var id=e.currentTarget.dataset.id;
+    var that = this;
+    wx.showModal({
+      title: '提示',
+      content: '是否删除该条记录',
+      cancelColor: 'cancelColor',
+      cancelText: '取消',
+      success: function (res) {
+        if (res.confirm) {
+          var business = that.data.business;
+          business.splice(index,1);
+          request.send('/busi/delete',{busiId:id},'GET',function(res){
+            console.log('获取删除结果：',res);
+            // if db删除成功 执行
+            that.setData({
+              business:business
+            })
+          })
+        }
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -3,9 +3,11 @@
 		<text >{{addr.addrName}}</text>
 	</view>
 </view>
-<view>
+
+<view class="text-display">
 	<view class="h2">
-		地标描述:
+		地标描述
 	</view>
-	<view>{{addr.description}}</view>
+	<view >{{addr.description}}</view>
 </view>
+<button style=" background-color:#00DB00;width:100%;position:fixed; bottom:0%;" bindtap="_navigation" >导航</button>

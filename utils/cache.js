@@ -18,6 +18,7 @@ function get(key, callBack) {
 }
 
 function set(key, value) {
+  util.print("加入缓存对象"+key)
   wx.setStorage({
     key: key,
     data: value

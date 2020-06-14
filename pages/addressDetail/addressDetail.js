@@ -27,6 +27,12 @@ Page({
     })
   },
 
+  _navigation:function(){
+    wx.openLocation({
+      latitude: this.data.addr.latitude,
+      longitude: this.data.addr.longitude,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

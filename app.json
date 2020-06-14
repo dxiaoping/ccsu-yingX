@@ -54,8 +54,8 @@
       {
         "pagePath": "pages/admin/index/index",
         "text": "管理员",
-        "iconPath": "images/me.png",
-        "selectedIconPath": "images/me_selected.png"
+        "iconPath": "images/admin.png",
+        "selectedIconPath": "images/admin.png"
       }
     ]
   },

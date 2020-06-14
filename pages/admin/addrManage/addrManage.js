@@ -43,13 +43,9 @@ Page({
               address:address
             })
           })
-          
-         
         }
       }
     })
-    // request.send('')
-
   },
   modify: function (e) {
 

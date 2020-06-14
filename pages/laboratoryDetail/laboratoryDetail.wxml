@@ -3,27 +3,27 @@
 		<text >{{laboratory.name}}</text>
 	</view>
 </view>
-<view>
+<view class="text-display">
 	<view class="h2">
-		社团描述:
+		实验室描述:
 	</view>
-	<view>{{laboratory.description}}</view>
+	<view><text>{{laboratory.description}}</text></view>
 </view>
-<view>
+<view  class="text-display">
 	<view class="h2">
 		相关人物:
 	</view>
-	<view>{{laboratory.relatedPerson}}</view>
+	<view><text>{{laboratory.relatedPerson}}</text></view>
 </view>
-<view>
+<view  class="text-display">
 	<view class="h2">
 		联系信息:
 	</view>
-	<view>{{laboratory.contactInfo}}</view>
+	<view><text>{{laboratory.contactInfo}}</text></view>
 </view>
-<view>
+<view  class="text-display">
 	<view class="h2">
 		详细地址:
 	</view>
-	<view>{{laboratory.address}}</view>
+	<view><text>{{laboratory.address}}</text></view>
 </view>

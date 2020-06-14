@@ -1,40 +1,41 @@
-<form bindsubmit="save">
-	<view class="weui-row-left">
+<view class = "background" style="width:100%;height:100%" >
+<form bindsubmit="save" >
+	<view class="weui-row-left left-margin">
 		<view>
-			社团名称:
+			<text class="text-font18">社团名称:</text>
 		</view>
 		<view>
 			<input type="text" class="szyx-input" name="name" value="{{association.name}}"></input>
 		</view>
 	</view>
-	<view class="section">
-			<picker bindchange="modifyClass" value="{{index}}" range-key="className" range="{{classList}}">
+	<view class="section left-margin">
+			<picker bindchange="modifyClass" value="{{index}}" range-key="value" range="{{classList}}">
 				<view class="picker">
-					所属机构：{{classList[classIndex].className}}
+				<text class="text-font18">	所属机构：{{classList[classIndex].value}}</text>
 				</view>
 			</picker>
 		</view>
-	<view>
-		<view>
-			社团简介
+	<view class="left-margin">
+		<view > 
+		<text class="text-font18">	社团简介</text>
 		</view>
 		<view>
-			<textarea class="szyx-input" name="description" value="{{business.description}}"></textarea>
+			<textarea class="szyx-input" name="description" value="{{association.description}}"></textarea>
 		</view>
 	</view>
 
-	<view>
+	<view class="left-margin">
 		<view>
-			相关人物
+		<text class="text-font18">	相关人物</text>
 		</view>
 		<view>
 			<textarea class="szyx-input" name="relatedPerson" value="{{association.relatedPerson}}"></textarea>
 		</view>
 	</view>
 
-	<view>
+	<view class="left-margin">
 		<view>
-			联系信息
+		<text class="text-font18">	联系信息</text>
 		</view>
 		<view>
 			<textarea class="szyx-input" name="contactInfo" value="{{association.contactInfo}}"></textarea>
@@ -42,3 +43,4 @@
 	</view>
 	<button form-type="submit">保存</button>
 </form>
+</view>

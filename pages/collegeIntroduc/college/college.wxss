@@ -32,3 +32,8 @@
   font-size: 14px;
   padding: 5px 5px 5px 5px;
 }
+.h1{
+  font-size: 24px;
+  color: aqua;
+  text-align: center;
+}

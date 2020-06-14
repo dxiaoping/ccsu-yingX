@@ -1,22 +1,24 @@
-<form bindsubmit="save">
+<view class = "background" style="width:100%;height:100%" >
+<view class="left-margin">
+<form bindsubmit="save" >
 	<view class="weui-row-left">
 		<view>
-			实验室名称:
+			<text class="text-font18"> 实验室名称:</text>
 		</view>
 		<view>
 			<input type="text" class="szyx-input" name="name" value="{{laboratory.name}}"></input>
 		</view>
 	</view>
 	<view class="section">
-			<picker bindchange="modifyClass" value="{{index}}" range-key="className" range="{{classList}}">
+			<picker bindchange="modifyClass" value="{{index}}" range-key="value" range="{{classList}}">
 				<view class="picker">
-					所属机构：{{classList[classIndex].className}}
+					<text class="text-font18">所属机构：{{classList[classIndex].value}}</text>
 				</view>
 			</picker>
 		</view>
 	<view>
 		<view>
-			实验室简介
+		<text class="text-font18">	实验室简介</text>
 		</view>
 		<view>
 			<textarea class="szyx-input" name="description" value="{{laboratory.description}}"></textarea>
@@ -25,7 +27,7 @@
 
 	<view>
 		<view>
-			相关人物
+			<text class="text-font18">相关人物</text>
 		</view>
 		<view>
 			<textarea class="szyx-input" name="relatedPerson" value="{{laboratory.relatedPerson}}"></textarea>
@@ -34,7 +36,7 @@
 
 	<view>
 		<view>
-			联系信息
+		<text class="text-font18">	联系信息</text>
 		</view>
 		<view>
 			<textarea class="szyx-input" name="contactInfo" value="{{laboratory.contactInfo}}"></textarea>
@@ -42,7 +44,7 @@
 	</view>
   <view>
 		<view>
-			详细地址
+			<text class="text-font18">详细地址</text>
 		</view>
 		<view>
 			<textarea class="szyx-input" name="address" value="{{laboratory.address}}"></textarea>
@@ -50,3 +52,5 @@
 	</view>
 	<button form-type="submit">保存</button>
 </form>
+</view>
+</view>

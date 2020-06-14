@@ -4,13 +4,13 @@
 		<text >{{business.busiName}}</text>
 	</view>
 </view>
-<view>
+<view  class="text-display">
 	<view class="h2">
 		业务描述:
 	</view>
 	<view>{{business.solution}}</view>
 </view>
-<view>
+<view  class="text-display">
 	<view class="h2">
 		地址导航
 	</view>
@@ -21,13 +21,13 @@
 		</block>
 	</view>
 </view>
-<view>
+<view  class="text-display">
 	<view class="h2">
-		其他业务
+		关联业务
 	</view>
 	<block wx:for="{{busiList}}" wx:key="key">
-		<view bindtap="redirectTo" id="{{item.busiId}}">
-			<view>{{item.busiName}}</view>
+		<view bindtap="redirectTo" id="{{item.busiId}}" class="busi-block">
+			{{item.busiName}}
 		</view>
 
 	</block>

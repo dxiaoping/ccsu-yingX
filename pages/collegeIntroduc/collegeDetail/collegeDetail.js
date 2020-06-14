@@ -1,5 +1,6 @@
 // pages/collegeIntroduc/collegeDetail/collegeDetail.js
 const request = require('../../../utils/request.js')
+const util = require('../../../utils/util.js')
 Page({
 
   /**
@@ -9,12 +10,13 @@ Page({
     college: {},
     speciality: [{
         specialityName: "软件工程",
-        developTarget: "培养目标",
-        majorClass: "C语言基础案例教程、"
+       
+        majorClass: "C语言基础案例教程、",
+        simpleMC:""
       },
       {
         specialityName: "计算机科学与技术",
-        developTarget: "培养目标",
+      
         majorClass: "C语言基础案例教程、python基础教程"
       }
     ]
@@ -40,6 +42,14 @@ Page({
         college: res.data.data.college,
         speciality: res.data.data.specialityList
       })
+      var count = that.data.speciality.length;
+      var index = 0;
+      for (index; index < count; index++) {
+        that.setData({
+          ['speciality[' + index + '].simpleMC']: util.processStr(that.data.speciality[index].majorClass, 45),
+          ['speciality[' + index + '].simpleDesc']: util.processStr(that.data.speciality[index].description, 45)
+        })
+      }
     })
   },
   navigatorTo: function (e) {

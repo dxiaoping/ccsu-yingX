@@ -153,9 +153,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "业务操作",
-					"pathName": "pages/admin/busiOperation/busiOperation",
+					"id": 14,
+					"name": "业务编辑",
+					"pathName": "pages/admin/busiEdit/busiEdit",
 					"query": "",
 					"scene": null
 				},
@@ -219,6 +219,14 @@
 					"id": -1,
 					"name": "学生社团",
 					"pathName": "pages/associationList/associationList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "地标详情",
+					"pathName": "pages/addressDetail/addressDetail",
+					"query": "",
 					"scene": null
 				}
 			]

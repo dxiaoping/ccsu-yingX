@@ -1,11 +1,15 @@
 <!--pages/collegeIntroduc/collegeDetail/collegeDetail.wxml-->
 
-<!-- <view>
-<text decode="true">&emsp;&emsp;{{college.description}}\n\n</text>
-</view> -->
+<view>
+	<view class="h1">{{college.collegeName}}</view>
+	<view style="margin: 5px 7% 0px 5%;">
+		<text decode="true">&emsp;&emsp;{{college.description}}\n\n</text>
+	</view>
+</view>
+<view class="h1">专业列表</view>
 <view class="data-info">
-<view>包含专业：</view>
 	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 100vh;">
+	<view wx:if="{{speciality.length==0}}">没有任何数据</view>
 		<block wx:for="{{speciality}}" wx:key="key">
 			<!-- <navigator url="/pages/jobdetail/jobdetail?id={{item.id}}"> -->
 			<view bindtap="navigatorTo" class="weui-cell" id="{{item.specialityId}}">
@@ -13,8 +17,8 @@
 					<view class="weui-college-name">{{item.specialityName}}</view>
 				</view>
 				<view class="weui-cell-left">
-					<view class=" weui-college-description"><text style="font-size: 18px; color: rgb(85, 190, 238);"> 培养目标:</text>{{item.developTarget}} </view>
-					<view class=" weui-college-description"><text style="font-size: 18px; color: rgb(85, 190, 238);"> 主修课程:</text>{{item.majorClass}} </view>
+					<view class=" weui-college-description"><text style="font-size: 18px; color: rgb(85, 190, 238);"> 培养目标:</text>{{item.simpleDesc}} </view>
+					<view class=" weui-college-description"><text style="font-size: 18px; color: rgb(85, 190, 238);"> 主修课程:</text>{{item.simpleMC}} </view>
 				</view>
 			</view>
 			<!-- </navigator> -->

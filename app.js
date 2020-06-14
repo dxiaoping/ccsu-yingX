@@ -39,11 +39,11 @@ App({
     if (that.globalData.DEBUG) {
       return that.globalData.DEBUG_HOST_URL
     } else {
-      return that.globalData.HOST_URL
+      return that.globalData.HOST_URL+'/ccsu'
     }
   },
   globalData: {
-    userInfo: null,
+    userInfo: null, 
     HOST_URL: "https://www.ttl317.top",
     DEBUG_HOST_URL: "http://localhost:1437",
     // DEBUG: false,

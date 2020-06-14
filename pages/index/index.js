@@ -11,17 +11,18 @@ var grade = '';
 var arrayHeight = 0;
 var plugin = requirePlugin("WechatSI")
 let manager = plugin.getRecordRecognitionManager()
-
+var realTimeClData = null;
 Page({
   data: {
-    voiceInput: '语音识别到',
+    voiceInput: '',
     voiceOutput: '',
     src: '',
-    inputValue: '', //点击结果项之后替换到文本框的值
+    inputValue: '', //点击结果项之后替换到文本框的值 
     searchMap: null,
     adapterSource: ["weixin", "wechat", "android", "Android", "IOS", "java", "javascript", "微信小程序", "微信公众号", "微信开发者工具"], //本地匹配源
     bindSource: [], //绑定到页面的数据，根据用户输入动态变化
     hideScroll: true,
+    secondConfirm:false
   },
   onLoad: function () {
     this.init()
@@ -49,9 +50,10 @@ Page({
         url = '../associationList/associationList'
         break;
       case 'rxbd':
-        url = '/pages/rxbd/rxbd';
+        url = '/pages/rxbd/rxbd?id=1';
         break;
-      case 'dtdh':
+      case 'schoolLife':
+        url = '/pages/rxbd/rxbd?id=2';
         break;
     }
     wx.navigateTo({
@@ -129,22 +131,43 @@ Page({
     console.log(res)
   },
   /**语音模块 */
+
+  endStreamRecord: function () {
+    console.log('结束录音', this.data.voiceTimer);
+      // clearInterval(realTimeClData);
+      wx.hideLoading()
+      // wx.hideToast();
+      manager.stop();
+      var that = this;
+      const data = {
+        str:this.data.voiceInput,
+        secondConfirm:this.data.secondConfirm
+      }
+      request.send('/base/voice', data ,'GET', function (res) {
+        console.log("获取关键词列表",res);
+        var keyList = res.data.data;
+        if (!that.data.secondConfirm) {
+          that.translateTextAction("为你检索到以下关键词，请进行二次确认");  
+        }
+        
+        that.setData({
+          voiceInput:keyList[0]+","+keyList[1]+","+keyList[2]+"",
+          secondConfirm:!that.data.secondConfirm
+        })
+      });
+  },
   streamRecord: function () {
+    // realTimeClData = setInterval(this.endStreamRecord, 1000);
     console.log('开始录音');
     manager.start({
-      duration: 60000,
+      // duration: 60000,
       lang: 'zh_CN'
     })
-    wx.showToast({
-      title: '正在聆听中......',
-      icon: 'none',
-      duration: 60000
+    wx.showLoading({
+      title: '聆听中......',
+      // icon: 'none',
+      // duration: 60000
     })
-  },
-  endStreamRecord: function () {
-    console.log('结束录音');
-    wx.hideToast();
-    manager.stop()
   },
   init: function () {
     var that = this;
@@ -168,55 +191,63 @@ Page({
 
     //有新的识别内容返回，则会调用此事件
     manager.onStart = function (res) {
-      console.log('开始录音识别：', res.result);
+      console.log('开始录音识别：', res);
     }
-
+   
+   
     manager.onRecognize = (res) => {
-      let text = res.result
-      console.log("实时语音", res)
+      console.log('onRecognize', res);
+      let text = res.result;
       this.setData({
         voiceInput: text,
       })
+     text = res.result;
     }
     // 识别结束事件
     manager.onStop = (res) => {
       // 输入音频
       let text = res.result
+      console.log('text取值',text)
       if (text == '') {
-        text = '什么都没有听到，请大声一点';
+        // text = '什么都没有听到，请大声一点';
+        text = '如何去图书馆';
         // 用户没有说话，可以做一下提示处理...
         // return
       }
-      request.send('/busi/queryOne', {
-        busiName: '体检'
-      }, 'GET', function (res) {
-        that.setData({
-          busi: res.data.data
-        })
-        console.log('获取音频内容', res.data.data)
-        // 获取到用户语音
-        that.setData({
-          voiceInput: text,
-          voiceOutput: that.data.busi.solution,
-        })
-        // console.log('获取音频内容', that.data.busi.solution)
-        that.translateTextAction()
+
+      // 请问您是否要找
+
+      // request.send('/busi/queryOne', {
+      //   busiName: '体检'
+      // }, 'GET', function (res) {
+      //   that.setData({
+      //     busi: res.data.data
+      //   })
+      //   console.log('获取音频内容', res.data.data)
+      //   // 获取到用户语音
+
+      that.setData({
+        voiceInput: text,
+        // voiceOutput: that.data.busi.solution,
       })
+      //   // console.log('获取音频内容', that.data.busi.solution)
+      //   that.translateTextAction()
+      // })
 
       // 得到完整识别内容就可以去翻译了
-     
+
     }
   },
   // 文字转语音
-  translateTextAction: function () {
+  translateTextAction: function (text) {
     var that = this;
     var content = this.data.voiceOutput;
     console.log('请求外获取音频内容', this.data.voiceOutput)
-    // var content = "携带好自己的身份证原件、复印件、录取通知书、现金或银行卡到达天健体育场乒乓球馆，到进门的最右侧缴纳学费并领取收据，随后在乒乓球馆找到找到本院系的宣传点上交身份证复印件、党团员档案后领取校园卡和入住单";
+    var content = "携带好自己的身份证原件";
     plugin.textToSpeech({
       lang: "zh_CN",
       tts: true,
-      content: content,
+      content: text,
       success: function (res) {
         console.log(res);
         console.log("succ tts", res.filename);

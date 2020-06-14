@@ -12,7 +12,8 @@
 		</view>
 		<view class="top bottom grid">
 			<label class="title col-0">地标描述</label>
-			<textarea class="input_base input_h90 col-1" name="description" value="{{description}}"></textarea>
+		
+			<textarea maxlength="-1" class="input_base input_h90 col-1" name="description" value="{{description}}"></textarea>
 		</view>
 		<button form-type="submit">提交</button>
 	</form>

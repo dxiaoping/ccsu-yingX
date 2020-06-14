@@ -1,5 +1,5 @@
 <view class="data-info">
-<view>入学报到业务</view>
+<!-- <view>入学报到业务</view> -->
 	<scroll-view scroll-y lower-threshold="100" bindscrolltolower="scrollToLower" style="height: 100vh;">
 		<block wx:for="{{busi}}" wx:key="key">
 			<!-- <navigator url="../collegeDetail/collegeDetail?item.id={{item.id}}"> -->

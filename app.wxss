@@ -25,3 +25,11 @@
   height: 150%;
   position:  absolute;
 }
+.h1{
+  font-size: 24px;
+  color: aqua;
+  text-align: center;
+}
+.text-display{
+  margin: 5px 7% 0px 5%;
+}

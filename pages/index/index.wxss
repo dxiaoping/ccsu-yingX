@@ -1,19 +1,23 @@
-.menu {
+
+.menu-row {
   margin-top: 8px;
   width: 100%;
   display: flex;
   padding: 8px;
   flex-direction: row;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
-
+.menu{
+  background-image: url('/images/myinfo_logo.png');
+   background-size: 100% 100%;
+}
 .menu-item {
   padding-top: 0rpx;
   padding-left: 22rpx;
   padding-right: 22rpx;
   padding-bottom: 22rpx;
   text-align: center;
-  background-color: #fff;
+  /* background-color: #fff; */
   width: 25%;
 }
 
@@ -60,8 +64,3 @@
   width: 80px;
   height: 80px;
 }
-
-/* .test{
-  color: royalblue;
-  background-color: royalblue;
-} */
